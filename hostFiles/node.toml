@@ -1,0 +1,51 @@
+[parity]
+mode = "active"
+no_download = false
+no_consensus = false
+light = false
+chain = "/nodeConfig/pichainspec.json"
+base_path = "/nodeConfig/node"
+identity = "node"
+
+[account] 
+password = ["/nodeConfig/node.pwd"]
+keys_iterations = 10240
+
+[network]
+port = 30303
+bootnodes = ["enode://a837636397db65958bd65d2b0dd2944ac2044f83f4080f7dc6a53c99f48a52e026f8ac08af7e5942ca9ce1d954bc3654d5098a6c14afea2fb47bc76cee70daa3@201.248.69.238:30303", "enode://292bb139348d4da57bd1d9f7b4c37e3f0557b2272eae53cef4f1bc25f3540712702db71807f5b365d6b4d0f92a98937b01527b587a45ff895398a60a25a58bd9@54.232.254.185:30303", "enode://93a02e108eb65f3f9a4c6a238af6669b2966da394c0a67fae9ad2be0f66c5bef30cded88c5c962a33e276392f038eadeb2e0f6069c320b9b21731ebe25220ced@3.13.75.102:30303", "enode://f0069ef468d188bbafc700da152e8e6dfbec7d6eabeef6064047e70cf32eade153f5f35d62872a5158de2e8ce094d6c3a1ed3e55c1431d9640be31b4b00b1f95@82.223.65.110:30303", "enode://87d2e1d094001dad31f64c47562090d3f26be7087fce105efd7ce434d7c4f770e5312e4973651ddea1be585f85e12bcbc26d0ea2e242d3bfa8366f74862c3e68@18.196.105.55:30303"]
+max_peers = 25
+
+[rpc]
+disable = false
+interface = "0.0.0.0"
+port = 8545
+apis = ["web3", "eth", "pubsub", "net", "parity", "parity_pubsub", "traces", "rpc", "shh", "shh_pubsub"] #//las safe
+cors = ["*"]
+hosts = ["all"]
+server_threads = 8
+
+[websockets]
+disable = false
+port = 8546
+interface = "0.0.0.0"
+apis = ["web3", "eth", "pubsub", "parity_pubsub", "traces", "rpc", "shh", "shh_pubsub"]
+
+[ipc]
+disable = true
+
+[ipfs]
+enable = false
+
+[secretstore]
+disable = true
+
+[misc]
+logging = "engine=info,import=info,network=info,poa=trace"
+log_file = "/nodeConfig/parity.log"
+
+[footprint]
+pruning = "fast"
+cache_size = 128 
+db_compaction = "ssd"
+scale_verifiers = true

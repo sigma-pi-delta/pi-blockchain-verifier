@@ -1,7 +1,7 @@
 version: "2.0"
 services:
   parity:
-    container_name: "parity_node_testnet"
+    container_name: "parity_node"
     image: parity/parity:v2.7.2-stable
     volumes: 
       - ./hostFiles:/nodeConfig
